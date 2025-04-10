@@ -44,9 +44,12 @@ var createManyPeople = function (arrayOfPeople, done) {
   });
 };
 
+/** 5) Find People with `Model.find()` */
 const findPeopleByName = (personName, done) => {
-  Person.find(personName)
-  done(null /*, data*/);
+  Person.find(personName, function (err, data) {
+    if (err) return console.error(err);
+    done(null, data);
+  });
 };
 
 const findOneByFood = (food, done) => {
