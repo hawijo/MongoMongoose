@@ -45,7 +45,7 @@ var createManyPeople = function (arrayOfPeople, done) {
 };
 
 const findPeopleByName = (personName, done) => {
-  Person.find({name: 'Sol'})
+  Person.find(personName)
   done(null /*, data*/);
 };
 
